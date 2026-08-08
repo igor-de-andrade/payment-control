@@ -3,6 +3,7 @@ const { GraphQLError } = require('graphql');
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 const COMPETENCIA_REGEX = /^(0[1-9]|1[0-2])\/\d{4}$/;
+const CPF_REGEX = /^\d{11}$/;
 
 function badRequest(message) {
   return new GraphQLError(message, { extensions: { code: 'BAD_USER_INPUT' } });
@@ -24,4 +25,9 @@ function validateCompetencia(value) {
   if (!COMPETENCIA_REGEX.test(value || '')) throw badRequest('Competência deve estar no formato MM/YYYY.');
 }
 
-module.exports = { badRequest, validateEmail, validateDate, validateCompetencia };
+function validateCpf(cpf) {
+  const value = (cpf || '').trim();
+  if (!CPF_REGEX.test(value) || /^(\d)\1{10}$/.test(value)) throw badRequest('CPF inválido.');
+}
+
+module.exports = { badRequest, validateEmail, validateDate, validateCompetencia, validateCpf };

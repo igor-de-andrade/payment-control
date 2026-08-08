@@ -1,10 +1,11 @@
 const { randomUUID } = require('crypto');
 const { GraphQLError } = require('graphql');
 const repository = require('../repositories/employeeRepository');
-const { badRequest, validateDate } = require('../utils/validation');
+const { badRequest, validateDate, validateCpf } = require('../utils/validation');
 
 function validate(input, partial = false) {
   if (!partial && (!input.cpf?.trim() || !input.nome?.trim() || input.salario_base == null || !input.admissao)) throw badRequest('CPF, nome, salário base e admissão são obrigatórios.');
+  if (input.cpf !== undefined) validateCpf(input.cpf);
   if (input.salario_base !== undefined && input.salario_base < 0) throw badRequest('Salário base não pode ser negativo.');
   if (input.admissao !== undefined) validateDate(input.admissao, 'Admissão');
   if (input.desligamento !== undefined) validateDate(input.desligamento, 'Desligamento', false);

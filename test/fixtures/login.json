@@ -1,0 +1,27 @@
+{
+  "credenciaisValidas": {
+    "email": "admin@admin.com",
+    "senha": "123456"
+  },
+  "credenciaisInvalidas": {
+    "email": "admin@admin.com",
+    "senha": "1234567"
+  },
+  "emailNaoCadastrado": {
+    "email": "naoexiste@teste.com",
+    "senha": "123456"
+  },
+  "usuarioInativo": {
+    "senha": "123456",
+    "nome": "Usuário Inativo",
+    "ativo": false
+  },
+  "usuarioAdmin": {
+    "email": "admin@admin.com",
+    "nome": "ADMIN",
+    "ativo": true
+  },
+  "mensagens": {
+    "credenciaisInvalidas": "Credenciais inválidas ou usuário inativo."
+  }
+}

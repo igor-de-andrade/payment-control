@@ -20,7 +20,24 @@ async function buildContext({ req }) {
 }
 async function start() {
   const app = express();
-  const server = new ApolloServer({ typeDefs, resolvers });
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    csrfPrevention: false,
+    plugins: [{
+      async requestDidStart() {
+        return {
+          async willSendResponse({ response }) {
+            if (response.body.kind !== 'single') return;
+            const errors = response.body.singleResult.errors;
+            if (errors?.some((error) => error.extensions?.code === 'BAD_USER_INPUT')) {
+              response.http.status = 400;
+            }
+          },
+        };
+      },
+    }],
+  });
   await server.start();
   app.use('/graphql', cors(), express.json(), expressMiddleware(server, { context: buildContext }));
   const port = Number(process.env.PORT) || 4000;

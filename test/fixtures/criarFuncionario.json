@@ -1,0 +1,21 @@
+{
+  "funcionarioValido": {
+    "nome": "João Silva",
+    "salario_base": 3500,
+    "admissao": "2024-01-15"
+  },
+  "cpfsInvalidos": ["1", "2", "123", "1234567890", "abcdefghijk"],
+  "datasInvalidas": {
+    "admissaoFormatoInvalido": "15/01/2024",
+    "admissao": "2024-01-15",
+    "desligamentoAnteriorAdmissao": "2024-01-01"
+  },
+  "mensagens": {
+    "cpfDuplicado": "Já existe funcionário com este CPF.",
+    "cpfInvalido": "CPF inválido.",
+    "autenticacaoObrigatoria": "Autenticação obrigatória.",
+    "salarioNegativo": "Salário base não pode ser negativo.",
+    "admissaoInvalida": "Admissão deve estar no formato YYYY-MM-DD e ser uma data válida.",
+    "desligamentoAnteriorAdmissao": "Desligamento não pode ser anterior à admissão."
+  }
+}
