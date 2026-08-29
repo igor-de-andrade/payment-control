@@ -1,0 +1,10 @@
+{
+    "admin":{
+        "email": "admin@admin.com",
+        "senha": "123456"
+    },
+    "Miriam":{
+        "email": "msilva@turma3.com",
+        "senha": "123456"
+    }
+}
