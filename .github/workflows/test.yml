@@ -1,0 +1,33 @@
+name: Private Payment CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: fazer checkout do repositório
+      uses: actions/checkout@v4
+
+    - name: Definir versão do node.jobs
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20.x"
+
+    - name: Instalar Dependências
+      run: npm install
+
+    - name: Iniciar API
+      run: npm start &
+
+    - name: Aguardar a API Iniciar
+      run: sleep 10
+
+    - name: Executar o Teste
+      run: npm test
