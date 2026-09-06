@@ -1,0 +1,21 @@
+HTTP/1.1 400 Bad Request
+X-Powered-By: Express
+Access-Control-Allow-Origin: *
+Content-Security-Policy: default-src 'none'
+X-Content-Type-Options: nosniff
+Content-Type: text/html; charset=utf-8
+Content-Length: 1824
+Date: Sun, 06 Sep 2026 06:22:16 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>SyntaxError: Expected property name or &#39;}&#39; in JSON at position 1<br> &nbsp; &nbsp;at JSON.parse (&lt;anonymous&gt;)<br> &nbsp; &nbsp;at parse (C:\Users\julianag\OneDrive - Toledo do Brasil\Área de Trabalho\PosGraduacao\07 - Automação de Testes na Camada de Serviço (API)\Projeto Aula 1 - Payment Control\payment-control\node_modules\body-parser\lib\types\json.js:91:21)<br> &nbsp; &nbsp;at C:\Users\julianag\OneDrive - Toledo do Brasil\Área de Trabalho\PosGraduacao\07 - Automação de Testes na Camada de Serviço (API)\Projeto Aula 1 - Payment Control\payment-control\node_modules\body-parser\lib\read.js:162:18<br> &nbsp; &nbsp;at AsyncResource.runInAsyncScope (node:async_hooks:206:9)<br> &nbsp; &nbsp;at invokeCallback (C:\Users\julianag\OneDrive - Toledo do Brasil\Área de Trabalho\PosGraduacao\07 - Automação de Testes na Camada de Serviço (API)\Projeto Aula 1 - Payment Control\payment-control\node_modules\raw-body\index.js:238:16)<br> &nbsp; &nbsp;at done (C:\Users\julianag\OneDrive - Toledo do Brasil\Área de Trabalho\PosGraduacao\07 - Automação de Testes na Camada de Serviço (API)\Projeto Aula 1 - Payment Control\payment-control\node_modules\raw-body\index.js:227:7)<br> &nbsp; &nbsp;at IncomingMessage.onEnd (C:\Users\julianag\OneDrive - Toledo do Brasil\Área de Trabalho\PosGraduacao\07 - Automação de Testes na Camada de Serviço (API)\Projeto Aula 1 - Payment Control\payment-control\node_modules\raw-body\index.js:287:7)<br> &nbsp; &nbsp;at IncomingMessage.emit (node:events:524:28)<br> &nbsp; &nbsp;at endReadableNT (node:internal/streams/readable:1698:12)<br> &nbsp; &nbsp;at process.processTicksAndRejections (node:internal/process/task_queues:82:21)</pre>
+</body>
+</html>
