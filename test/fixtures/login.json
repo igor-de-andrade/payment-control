@@ -3,8 +3,8 @@
         "email": "admin@admin.com",
         "senha": "123456"
     },
-    "pgats": {
-        "email": "pgats@turma3.com",
+    "admin2": {
+        "email": "admin2@admin.com",
         "senha": "123456"
     }
 }
